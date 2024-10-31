@@ -27,7 +27,7 @@ public class ResponseServlet extends HttpServlet {
         StringBuilder builder = new StringBuilder();
         // StringBuilder : 기존 문자열에 값 추가할 수 있음
         // (String은 새로운 공간을 만들어서 더했었음)
-        builder.append("<!doctype html>\n")
+         builder.append("<!doctype html>\n")
                 .append("<html>\n")
                 .append("<head></head>\n")
                 .append("<body>\n")

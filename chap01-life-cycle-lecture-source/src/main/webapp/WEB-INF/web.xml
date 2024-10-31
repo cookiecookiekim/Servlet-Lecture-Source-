@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns="https://jakarta.ee/xml/ns/jakartaee"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="https://jakarta.ee/xml/ns/jakartaee https://jakarta.ee/xml/ns/jakartaee/web-app_6_0.xsd"
+         version="6.0">
+
+<!-- comment. xml 방식을 우리가 만든 Servlet을 등록해야 한다.
+         name 태그는 사용할 이름을 지정한다.
+         class태그는 사용할 이름에 해당하는 풀 클래스명 작성
+         load-on-startup 태그 : tomcat start 시 로딩할 순서 -->
+        <servlet>
+            <servlet-name>xmlmapping</servlet-name>
+            <servlet-class>com.ohgiraffers.lifecycle.xml.LifeCycleTestServlet</servlet-class>
+            <load-on-startup>3</load-on-startup>
+        </servlet>
+    <!-- comment.
+            servlet-mapping은 우리가 등록한 servlet을 어떤 url과 매칭
+            시킬 것인지 지정하는 태그이다. -->
+        <servlet-mapping>
+            <servlet-name>xmlmapping</servlet-name> <!--mapping할 서블릿 이름 -->
+            <url-pattern>/xml-lifecycle</url-pattern>
+            <!-- 동작 방식 : 런과 동시에 최초 기본생성자 호출되고(인스턴스 생성),
+            페이지 새로고침 할 때마다 service 메서드 호출됨
+             (새로고침) → /xml-lifecycle 만나면 LifeCycleTestServlet Class 동작해라
+
+              run 종료하면 destroy() 메서드 호출 : 1 -->
+        </servlet-mapping>
+
+    <!-- 목적 : 사용자가 "xml-lifecycle" 누르면 LifeCycleTestServlet Class를 보여주고 싶음-->
+
+    <!-- 홈페이지 제작 시 XML 방식은 사용하지 않음,
+    (페이지가 많다고 가정하면 일일이 만들수가 없으므로 비효율적) -->
+</web-app>

@@ -39,5 +39,7 @@ public class RedirectServlet extends HttpServlet {
         out.print(redirectText);
         out.flush();
         out.close();
+
+        // 이 방식은 새로고침 할 시 DB에 영향을 주지 않음.
     }
 }

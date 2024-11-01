@@ -11,7 +11,7 @@ import java.io.IOException;
 // 24-11-01 (금) 2교시 리다이렉트
 // otherservlet
 
-@WebServlet(value="otherservlet")
+@WebServlet(value="/otherservlet")
 public class OtherServlet extends HttpServlet {
 
     @Override

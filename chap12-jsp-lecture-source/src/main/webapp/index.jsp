@@ -10,8 +10,8 @@
     <ul> <!-- 지금까지 a링크에 항상 url을 작성했는데, jsp 파일을 작성 -->
       <!-- jsp 파일의 경로와 일치시키기 -->
       <li><a href="jsp/1_simpleJspStates.jsp">JSP 기본 문법</a></li>
-      <li><a href=""></a></li>
-      <li><a href=""></a></li>
+      <li><a href="jsp/2_pageDirective.jsp">Page 지시자 태그</a></li>
+      <li><a href="jsp/3_includeDirective.jsp">Include 지시자 태그</a></li>
       <li><a href=""></a></li>
     </ul>
 </body>

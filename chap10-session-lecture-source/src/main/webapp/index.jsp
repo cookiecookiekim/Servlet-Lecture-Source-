@@ -15,5 +15,7 @@
         <br>
         <button type="submit">로그인</button>
     </form>
+    <hr>
+    <a href="delete">세션 데이터 지워보기</a>
 </body>
 </html>

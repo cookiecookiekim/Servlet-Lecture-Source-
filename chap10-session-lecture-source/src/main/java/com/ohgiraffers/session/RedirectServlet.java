@@ -8,6 +8,7 @@ import jakarta.servlet.http.HttpServletResponse;
 import jakarta.servlet.http.HttpSession;
 
 import java.io.IOException;
+import java.io.PrintWriter;
 
 @WebServlet("/redirect")
 public class RedirectServlet extends HttpServlet {
@@ -29,5 +30,29 @@ public class RedirectServlet extends HttpServlet {
         // SessionHandlingServlet의 생성한 session의 id 값과 동일함
         // → redirect 시, 동일한 값 가지고 있다.
 
+        // 2교시, session에 담아 놓은 값 꺼내기
+        /* 동일한 ID 를 가지 Session에서는 setAttribute로 넣은 값을
+         getAttribute로 꺼낼 수 있음. */
+        id = (String) session.getAttribute("id"); // 형변환
+        pwd = (String) session.getAttribute("pwd");
+
+        System.out.println("세션 생성 이후 id :  " + id);
+
+        // 출력 해보기
+        resp.setContentType("text/html; charset=UTF-8");
+        PrintWriter out = resp.getWriter();
+        out.println("<!doctype html>");
+        out.println("<html>");
+        out.println("<head>");
+        out.println("</head>");
+        out.println("<body>");
+        out.println("<h3>");
+        out.println(id + "님 환영합니다.");
+        out.println("</h3>");
+        out.println("</body>");
+        out.println("</html>");
+
+        out.flush();
+        out.close();
     }
 }
